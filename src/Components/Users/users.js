@@ -1,6 +1,6 @@
 import React ,{Component} from 'react';
 import Header from './Header';
-
+import Addusers from './Addusers';
 class Users extends Component {
 
     render() {
@@ -31,7 +31,7 @@ class Users extends Component {
                             </div>
                         </div>
                     </div>
-
+                <Addusers/>
 
                     <div className="todosList">
                         <div className="container">
