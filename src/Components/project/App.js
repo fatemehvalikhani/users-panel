@@ -1,4 +1,4 @@
-import Users from "./components/Main/Users";
+import Userpanel from "./components/Panel/Userpanel";
 import Header from "./components/Header";
 
 function App(){
@@ -6,8 +6,9 @@ function App(){
             <div>
     
               <Header/>
-              <Users/>
+              <Userpanel/>
             </div>
     )
 }
 export default App;
+  

@@ -1,16 +1,16 @@
 import React from "react";
 
-function Addusers(){
+function Userlist(){
     <tbody>
                                 <tr>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
+                                     <td></td>
                                    
                                 </tr>
                                 
                                 
      </tbody>
 }
-export default Addusers;
+export default Userlist;
