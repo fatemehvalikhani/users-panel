@@ -17,7 +17,7 @@ function AddUser( addUser){
          });
          setShowModal(false);
 
-       };
+       }
         const changeInput =(e) =>{
             let name = e.target.name;
             let value = e.target.value;
@@ -113,7 +113,7 @@ function AddUser( addUser){
                            >
                              Close
                             </button>
-                           <button  className="btn btn-primary">Save </button>
+                           <button type="submit" className="btn btn-primary">Save </button>
                        </div>
                   </div>
            </div>
