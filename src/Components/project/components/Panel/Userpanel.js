@@ -1,23 +1,19 @@
-import React ,{Component} from 'react';
+import React ,{Component, useState} from 'react';
 
 import AddUser from "./AddUser";
 import Userlist from "./Userlist";
  
 
 
-  function Userpanel ({users}){
-      console.log(users);
-
-      const Userpanel({users,setUsers}) => {
+  function Userpanel (){
+      const [users ,setUsers] =useState([]);
             
         return (
             
                
             <div className="App">  
-                <AddUser/>     
+                <AddUser addUser={setUsers}/>     
                 <main className='container'>
-                        
-                   
                     
                       <div className="todosList">
                         <div className="container">
@@ -42,29 +38,9 @@ import Userlist from "./Userlist";
                                     <td></td>
                                     <td></td>
 
-                                   
+                                   <Userlist users={users}  setusers={setUsers}/>
                                 </tr>
                                 
-
-
-
-
-                                   {user.length
-                                      users.map((user))=>( 
-                                      
-                                      <Userlist
-                                       user={user}  
-                                       key={user name}    
-                                       setUsers={setUsers}    
-                                       users={users}
-                                      
-                                      
-                                      />
-                                         
-
-                                      )}
-
-                                   }
                                 </tbody>
 
                                

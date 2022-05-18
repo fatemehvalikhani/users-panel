@@ -1,6 +1,7 @@
 import React from "react";
 
-function Userlist(){
+function Userlist({users , setUsers}){
+    console.log(users);
     <tbody>
                                 <tr>
                                     <td></td>

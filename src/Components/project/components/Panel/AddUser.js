@@ -113,7 +113,7 @@ function AddUser( addUser){
                            >
                              Close
                             </button>
-                           <button type="submit" className="btn btn-primary">Save </button>
+                           <button  className="btn btn-primary">Save </button>
                        </div>
                   </div>
            </div>
