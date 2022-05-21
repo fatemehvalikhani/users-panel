@@ -5,14 +5,18 @@ import Userlist from "./Userlist";
  
 
 
-  function Userpanel (){
-      const [users ,setUsers] =useState([]);
+  function Userpanel ( {users,setUsers,showModal,setShowModal}){
+    
             
         return (
             
                
             <div className="App">  
-                <AddUser addUser={setUsers}/>     
+                <AddUser addUser={setUsers}
+                setUsers={setUsers}
+                showModal={showModal}
+                setShowModal={setShowModal}
+                />     
                 <main className='container'>
                     
                       <div className="todosList">
@@ -25,38 +29,31 @@ import Userlist from "./Userlist";
                                     <th scope="col">userName</th>
                                     <th scope="col">email</th>
                                     <th className='my-2 px-2'>
-                                        <button className="btn  btn-danger">delete</button>
-                                        <button className="btn btn-primary">edit</button>
+                                        Edit & Delete
                                     </th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    {users.length
-                                
-                                ? users.map((user, index)=><Userlist person={user} key ={index} users={users}  setusers={setUsers}/> )
-                                :'there arent any users'
-                               
-                               }  
-                                    
-                              
-                                </tr>
-                                
-                                </tbody>
 
+                                {users.length
                                 
-                               
+                                ? users.map((user, index)=>(
+                                <Userlist  key ={index} user={user}  /> ))
+                                :"there arent any users"}  
+                                </tbody>
+                             
                              </table>
-                                     <td>
-                                        
-                                    </td>
+                                      <td></td>  
+                                    
                         </div>
-                    </div>
+                    </div> 
+                  
+
                 </main>
         </div>
-        )
+        );
     }
-
+       
 
 
 export default Userpanel;
