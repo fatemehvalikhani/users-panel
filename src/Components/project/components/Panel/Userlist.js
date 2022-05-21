@@ -1,12 +1,12 @@
 import React from "react";
 
-function Userlist( { usrs, person ,setUsers}){
+function Userlist( { users, person ,setUsers}){
     <tbody>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                     <td></td>
+                                    <td> {person.firstNam}</td>
+                                    <td>{person.lastNam}</td>
+                                    <td>{person.userName}</td>
+                                     <td>{person.email}</td>
                                    
                                 </tr>
                                 
