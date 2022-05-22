@@ -30,7 +30,7 @@ function AddUser( {setUsers,showModal,setShowModal}){
               return[...prevState,user];
             });
 
-          }
+          };
     return(
       <div className='row mx-0 my-2 px-2 justify-content-end'>
               <button className="btn btn-primary col-md-2" data-toggle="modal" data-target="#exampleModal" 
@@ -56,7 +56,7 @@ function AddUser( {setUsers,showModal,setShowModal}){
         
                  <div className="form-row">
                     <div className="col-md-4 mb-3">
-                      <label for="validationCustom01">First name</label>
+                      <label htmlFor="validationCustom01">First name</label>
                       <input type="text" 
                       name="firstName"
                       onChange={changeInput}
@@ -121,7 +121,8 @@ function AddUser( {setUsers,showModal,setShowModal}){
                            >
                              Close
                             </button>
-                           <button type="button" className="btn btn-primary">Save</button>
+                           <button type="sobmit" className="btn btn-primary" data-dismiss="modal"
+                           onClick={() => setShowModal(false)}> Save</button>
                        </div>
             
        </form>
