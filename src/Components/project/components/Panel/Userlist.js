@@ -1,14 +1,18 @@
 import React from "react";
+import DeleteUser from "./DeleteUser";
+ 
+function Userlist( { user,setUsers}){
 
-function Userlist( { user}){
+    
                                 return(
-                                    <tr>
+                                <tr>
                                     <td> {user.firstName}</td>
                                     <td>{user.lastName}</td>
                                     <td>{user.userName}</td>
                                      <td>{user.email}</td>
                                      <td>
-                                     <button className="btn  btn-danger">delete</button>
+                                        <DeleteUser setUsers={setUsers} user={user} id={user.id}/>
+                                     
                                      <button className="btn btn-primary">edit</button>
 
                                      </td>
@@ -16,6 +20,7 @@ function Userlist( { user}){
                                 </tr>
                                 
                                 );
+
                                 
      
 }

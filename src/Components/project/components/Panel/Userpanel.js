@@ -1,4 +1,4 @@
-import React ,{useState} from 'react';
+import React  from 'react';
 
 import AddUser from "./AddUser";
 import Userlist from "./Userlist";
@@ -38,11 +38,11 @@ import Userlist from "./Userlist";
                                 {users.length
                                 
                                 ? users.map((user, index)=>(
-                                <Userlist  key ={index} user={user}  /> ))
+                                <Userlist  key ={user.index} user={user}  setUsers={setUsers}/> ))
                                 :"there arent any users"}  
                                 </tbody>
                              
-                             </table>
+                                </table>
                                       <td></td>  
                                     
                         </div>
