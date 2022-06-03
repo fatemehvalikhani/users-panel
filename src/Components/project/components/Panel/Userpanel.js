@@ -1,55 +1,23 @@
-import React  from 'react';
-
+import React ,{useState} from 'react';
 import AddUser from "./AddUser";
-import Userlist from "./Userlist";
- 
+import Table from './Table';
 
 
   function Userpanel ( {users,setUsers,showModal,setShowModal}){
     
-            
         return (
             
                
             <div className="App">  
+              
                 <AddUser addUser={setUsers}
                 setUsers={setUsers}
                 showModal={showModal}
                 setShowModal={setShowModal}
-                />     
-                <main className='container'>
-                    
-                      <div className="todosList">
-                        <div className="container">
-                            <table className="table table-bordered">
-                                <thead>
-                                <tr>
-                                   <th scope="col">firstName</th>
-                                    <th scope="col"> lastName</th>
-                                    <th scope="col">userName</th>
-                                    <th scope="col">email</th>
-                                    <th className='my-2 px-2'>
-                                        Edit & Delete
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
+                />    
+                <Table setUsers={setUsers}  users={users}  />
 
-                                {users.length
-                                
-                                ? users.map((user, index)=>(
-                                <Userlist  key ={user.index} user={user}  setUsers={setUsers}/> ))
-                                :"there arent any users"}  
-                                </tbody>
-                             
-                                </table>
-                                      <td></td>  
-                                    
-                        </div>
-                    </div> 
-                  
-
-                </main>
+               
         </div>
         );
     }

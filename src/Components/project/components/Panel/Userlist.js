@@ -1,27 +1,22 @@
 import React from "react";
 import DeleteUser from "./DeleteUser";
- 
+
 function Userlist( { user,setUsers}){
 
-    
-                                return(
+
+                                return  (
                                 <tr>
-                                    <td> {user.firstName}</td>
-                                    <td>{user.lastName}</td>
-                                    <td>{user.userName}</td>
-                                     <td>{user.email}</td>
-                                     <td>
+                                    <td className="px-6 py-4 text-right"> {user.firstName}</td>
+                                    <td className="px-6 py-4 text-right">{user.lastName}</td>
+                                    <td className="px-6 py-4 text-right">{user.userName}</td>
+                                     <td className="px-6 py-4 text-right">{user.email}</td>
+                                     <td className="px-6 py-4 flex justify-evenly">
                                         <DeleteUser setUsers={setUsers} user={user} id={user.id}/>
-                                     
-                                     <button className="btn btn-primary">edit</button>
-
+                                        
+                                       
                                      </td>
-                                   
-                                </tr>
-                                
-                                );
-
-                                
-     
-}
+                                     
+                                 </tr>
+                                          );
+};
 export default Userlist;
