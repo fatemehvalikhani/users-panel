@@ -52,10 +52,10 @@ function AddUser({ setUsers, showModal, setShowModal }) {
 
 
 
-      <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">
 
-          <form className="modal-content" onSubmit={addUserHandler} novalidate>
+          <form className="modal-content" onSubmit={addUserHandler} noValidate>
 
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -68,7 +68,7 @@ function AddUser({ setUsers, showModal, setShowModal }) {
               <div className="modal-body">
 
 
-                <div className="needs-validation" novalidate>
+                <div className="needs-validation" noValidate>
 
 
                   <div className="form-row">
