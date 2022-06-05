@@ -1,70 +1,68 @@
-import Reac, { useState } from "react";
+import React, { useState } from "react";
 
-function EditUser(target, setEdit, setUsers) {
+function EditUser({ user, editDone }) {
 
-    const [user, setUser] = useState({
-        id: target,
-        firstName: target.firstName,
-        lastName: target.lastName,
-        userName: target.userName,
-        email: target.email
+    const [editUser, setEditUser] = useState({
+        name: user.name,
+        last_Name: user.last_Name,
+        userName: user.userName,
+        email: user.email
     });
 
     const handleInputs = (event) => {
-        let name = event.target.name;
-        let value = event.target.value;
-        setUser({
-            ...user,
+        const name = event.target.name;
+        const value = event.target.value;
+        setEditUser({
+            ...editUser,
             [name]: value,
         });
+
     };
 
-    const handleSubmit = () => {
-        setUsers((prevState) =>
-            prevState.map((person) => (person.id === target.id ? user : person))
-        );
-        setEdit(false);
-    }
 
 
+    return (
+        <tr className="hover:bg-gray-100" >
 
-    return ( 
-        <tr className = "hover:bg-gray-100" >
-        <button className = "btn btn-primary"
-        onClick = { handleSubmit } >
-        edit </button>
 
-        <td className = "text-center py-2 px-4 " >
-        <input required id = "name"
-        type = "text"
-        defaultValue = { user.firstName }
-        className = "input text-xs"
-        onChange = { handleInputs }
-        name = "name" />
-        </td>  
-        <td className = "text-center py-2 px-4 " >
-        <input required type = "text"
-        defaultValue = { user.lastName }
-        className = "input text-xs"
-        onChange = { handleInputs }
-        name = "name" />
-        </td>
-         <td className = "text-center py-2 px-4 " >
-        <input required type = "text"
-        defaultValue = { user.userName }
-        className = "input text-xs"
-        onChange = { handleInputs }
-        name = "name" />
-        
-        </td>
+            <td className="text-center py-2 px-4 " >
+                <input required id="name"
+                    type="text"
+                    defaultValue={user.name}
+                    className="input text-xs"
+                    onChange={handleInputs}
+                    name="name"
+                />
 
-        <td className = "text-center py-2 px-4 " >
-        < input required type = "text"
-        defaultValue = { user.email }
-        className = "input text-xs"
-        onChange = { handleInputs }
-        name = "name" />
-        </td>            
+            </td>
+            <td className="text-center py-2 px-4 " >
+                <input required type="text"
+                    defaultValue={user.last_name}
+                    className="input text-xs"
+                    onChange={handleInputs}
+                    name="last_name" />
+            </td>
+            <td className="text-center py-2 px-4 " >
+                <input required type="text"
+                    defaultValue={user.userName}
+                    className="input text-xs"
+                    onChange={handleInputs}
+                    name="userName" />
+
+            </td>
+
+            <td className="text-center py-2 px-4 " >
+                < input required type="text"
+                    defaultValue={user.email}
+                    className="input text-xs"
+                    onChange={handleInputs}
+                    name="email" />
+            </td>
+            <td>
+                <button className="btn btn-primary"
+                    onClick={() => editDone(editUser)} >
+                    edit </button>
+            </td>
         </tr>
 
 
