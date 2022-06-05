@@ -23,17 +23,20 @@ function AddUser({ setUsers, showModal, setShowModal }) {
   };
 
   const addUserHandler = async () => {
+
+
     try {
       const response = await axios.post('https://628ad989280122de359cf373.endapi.io/react-project/', {
         name: user.firstName,
         last_name: user.lastName,
         email: user.email,
       })
-      console.log(response);
       if (response.status === 200) {
+        setUser(initialUserData)
         setUsers((prevState) => {
-          return [...prevState, user];
+          return [...prevState, response.data.data];
         })
+
       }
     } catch (error) {
       console.log(error.response.data.message);
@@ -79,6 +82,7 @@ function AddUser({ setUsers, showModal, setShowModal }) {
                         onChange={changeInput}
                         className="form-control"
                         id="validationCustom01"
+                        value={user.firstName}
                         placeholder="First name" required />
                       <div className="valid-feedback">
 
@@ -91,6 +95,7 @@ function AddUser({ setUsers, showModal, setShowModal }) {
                         onChange={changeInput}
                         className="form-control"
                         id="validationCustom02"
+                        value={user.lastName}
                         placeholder="Last name" required />
                       <div className="valid-feedback">
                         Looks good!
@@ -107,6 +112,7 @@ function AddUser({ setUsers, showModal, setShowModal }) {
                           onChange={changeInput}
                           className="form-control"
                           id="validationCustomUsername"
+                          value={user.userName}
                           placeholder="Username" aria-describedby="inputGroupPrepend" required />
                         <div className="invalid-feedback">
                           Please choose a username.
@@ -123,6 +129,7 @@ function AddUser({ setUsers, showModal, setShowModal }) {
                         onChange={changeInput}
                         className="form-control"
                         id="inputEmail4"
+                        value={user.email}
                         placeholder="Email" />
                     </div>
 
